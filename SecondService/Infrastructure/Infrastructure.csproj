@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <UserSecretsId>bb3851f8-6fbf-465f-9533-e89b1b95a756</UserSecretsId>
+    </PropertyGroup>
+
+    <Import Project="..\Shared.props"/>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Application\Application.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.3.1"/>
+        <PackageReference Include="MassTransit.RabbitMQ" Version="8.2.0-develop.1682"/>
+
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.27"/>
+    </ItemGroup>
+
+</Project>

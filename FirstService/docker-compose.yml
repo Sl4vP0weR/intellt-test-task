@@ -1,0 +1,12 @@
+version: '3'
+services:
+  api:
+    image: first-service
+    restart: always
+    ports:
+      - "8040:80" # http
+      - "8041:443"# https
+    environment:
+      RABBITMQ_HOST: host.docker.internal
+      RABBITMQ_USER: admin
+      RABBITMQ_PASSWORD: admin

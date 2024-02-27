@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+
+    <Import Project="..\Shared.props"/>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Application\Application.csproj"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="MassTransit.RabbitMQ" Version="7.3.1"/>
+    </ItemGroup>
+
+</Project>
