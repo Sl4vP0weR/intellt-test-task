@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: admin
       POSTGRES_DB: second_service
   rabbitmq:
-    image: rabbitmq:3.10.7-management
+    image: rabbitmq:3.13.0-management
     restart: always
     ports:
       - "5672:5672"  # AMQP protocol port
