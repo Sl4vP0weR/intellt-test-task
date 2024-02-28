@@ -14,7 +14,7 @@ public class QueryOrganizationUsersHandler(
             .Where(x => x.Organization == organization);
         
         var count = await users.CountAsync(token);
-
+        
         var from = request.From;
         var to = Math.Min(request.To, count - 1);
         var range = to - from + 1;
@@ -23,7 +23,7 @@ public class QueryOrganizationUsersHandler(
             .Skip(from).Take(range)
             .ProjectTo<UserDTO>(Mapper.ConfigurationProvider);
         
-        UserQuery query = new(usersDto, count - range - to);
+        UserQuery query = new(usersDto, count - range - from);
         return query;
     }
 }
