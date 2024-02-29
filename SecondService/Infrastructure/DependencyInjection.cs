@@ -57,10 +57,7 @@ public class DependencyInjection(IServiceCollection Services, IConfiguration? Co
                     h.Password(Configuration[PasswordKey]);
                 });
                 
-                config.ReceiveEndpoint(typeof(CreateUser).FullName!, endpoint =>
-                {
-                    endpoint.ConfigureConsumer<UserCreationConsumer>(context);
-                });
+                config.ConfigureEndpoints(context);
             });
         });
     }
