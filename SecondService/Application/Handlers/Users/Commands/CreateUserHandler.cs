@@ -14,11 +14,10 @@ public class CreateUserHandler(
         
         user = new()
         {
-            Id = Guid.NewGuid(),
             Name = request.Name,
             Surname = request.Surname,
             Patronymic = request.Patronymic,
-            Mail = request.Mail,
+            Mail = request.Mail.Trim(),
             PhoneNumber = request.PhoneNumber.Trim('+')
         };
 
