@@ -25,6 +25,7 @@ services.AddResponseCompression(opt =>
     opt.EnableForHttps = true;
 });
 
+AddLoggging();
 builder.Host.UseSerilog();
 
 var app = builder.Build();
@@ -51,7 +52,7 @@ void AddLoggging()
         .WriteTo.Console()
         .ReadFrom.Configuration(configuration);
 
-    if (!builder.Environment.IsDevelopment())
+    if (inDevelopment)
     {
         loggerBuilder
             .MinimumLevel.Override("Microsoft.AspNetCore", LogEventLevel.Warning)
